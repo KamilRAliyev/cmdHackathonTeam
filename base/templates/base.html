@@ -10,8 +10,11 @@
     {% include 'base/css.html' %}
 </head>
 <body>
+{% include 'base/navbar.html' %}
+{% block main %}
 
-
-{% include 'base/js,html' %}
+{% endblock %}
+{% include 'base/footer.html' %}
+{% include 'base/js.html' %}
 </body>
 </html>
