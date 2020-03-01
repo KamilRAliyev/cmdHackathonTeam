@@ -28,14 +28,15 @@
                     <h3 class="title">Login with</h3>
                     <p>Welcome back, please sign in below</p>
                 </div>
-                <form class="signin-form">
+                <form class="signin-form" method="post" action="/login/">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label for="signinEmail">Email*</label>
-                        <input type="email" class="form-control" id="signinEmail" placeholder="Enter your Email">
+                        <input type="text" class="form-control" name="username" id="signinEmail" placeholder="Enter your Email">
                     </div>
                     <div class="form-group">
                         <label for="signinPass">Password*</label>
-                        <input type="password" class="form-control" id="signinPass" placeholder="Password">
+                        <input type="password" class="form-control" name="password" id="signinPass" placeholder="Password">
                     </div>
                     <div class="form-group">
                         <div class="custom-checkbox">
@@ -433,7 +434,7 @@
 <!-- invest-section end -->
 
 <!-- offer-section start -->
-<section class="offer-section pt-120 pb-120 bg_img" data-background="assets/images/offer-bg.png">
+<section class="offer-section pt-120 pb-120 bg_img" data-background="/static/assets/images/offer-bg.png">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-8">
