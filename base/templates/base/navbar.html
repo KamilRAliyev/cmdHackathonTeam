@@ -1,0 +1,43 @@
+{% load static %}
+
+<!--  header-section start  -->
+<header class="header-section">
+    <div class="header-bottom">
+        <div class="container">
+            <nav class="navbar navbar-expand-xl">
+                <a class="site-logo site-title" href="{% url 'index' %}"><img alt="site-logo" src={% static "assets/images/mylogo.png"  %}
+                                                                          ></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="menu-toggle"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav main-menu ml-auto">
+                        <li><a href="#">Home</a>
+                        </li>
+                        <li><a href="{% url 'index' %}#about">why us</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li class="menu_has_children"><a href="#list-entrepreneur">Entrepreneurs</a>
+                            <ul class="sub-menu">
+                                <li><a href="#">Browse more</a> </li><!--it goes to entrepenurs page-->
+                            </ul>
+                        </li>
+                        <li><a href="#investors">Investors</a></li>
+                    </ul>
+                    <div class="header-join-part">
+                        {% if user.is_authenticated %}
+                            <button class="btn btn-primary btn-hover btn-sm"><a href="/logout/">Sign out</a></button>
+                            {% else %}
+                            <button type="button" class="btn btn-primary btn-hover" data-toggle="modal"
+                                data-target="#signInModal">sign in
+                        </button>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div><!-- header-bottom end -->
+</header>
+<!--  header-section end  -->
